@@ -20,15 +20,17 @@
  * @version    $Id$
  */
 
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * @category   Zend
  * @package    Zend_Exception
  * @subpackage UnitTests
- * @group      Zend_Exception
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
+#[Group('Zend_Exception')]
 class Zend_ExceptionTest extends PHPUnit\Framework\TestCase
 {
     /**
@@ -52,9 +54,9 @@ class Zend_ExceptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @doesNotPerformAssertions
      * @return void
      */
+    #[DoesNotPerformAssertions]
     public function testStringCodeDoesNotThrowError()
     {
         $e = new Zend_Exception('msg', 'abc');
